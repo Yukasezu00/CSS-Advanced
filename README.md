@@ -50,9 +50,10 @@ The topic I chose for this project is **Music Production & Audio Engineering**, 
 
 ---
 
-## 📸 Preview 
+## 📸 Previews
 
 ![Preview Screenshot](EDM%20picture.jpg)
+![Preview Screenshot](screenshot-webpage.png)
 
 ---
 
