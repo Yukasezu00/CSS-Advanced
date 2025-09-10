@@ -1,0 +1,269 @@
+/* =========================
+   Global styles & variables
+   ========================= */
+:root {
+  --text-color: #fff;
+  --text-size: 16px;
+  --hover-border: #3c99dc;
+  --accent-color: #3c99dc;
+
+  /* Neutraler dan puur zwart voor rust op small/medium */
+  --surface-0: #0e1014; /* page bg */
+  --surface-1: #151922; /* cards */
+  --surface-2: #1b2130; /* hover/elevated */
+  --muted-text: #d7d9df;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow-x: hidden; /* prevent horizontale scroll */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: var(--text-size);
+  color: var(--text-color);
+  background-color: var(--surface-0);
+  line-height: 1.6;
+}
+
+/* =========================
+   Header & Footer
+   ========================= */
+header,
+footer {
+  text-align: center;
+  padding: 56px 18px; /* compacter voor small */
+  color: #fff;
+  position: relative;
+  background: #111;
+  background-image: url("EDM picture.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+header::after,
+footer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* overlay voor contrast */
+}
+
+header h1,
+footer p {
+  position: relative;
+  z-index: 1;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* =========================
+   Main content – calm on small/medium
+   ========================= */
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  gap: 16px;
+}
+
+.content {
+  /* RUSTIG op small/medium: géén foto in de cards */
+  background: var(--surface-1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 24px 18px;
+  margin: 0 auto;
+  max-width: 720px;
+  text-align: center;
+  color: var(--accent-color);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
+  border-color: var(--hover-border);
+  background-color: var(--surface-2);
+}
+
+/* =========================
+   Typography
+   ========================= */
+h1 {
+  font-size: clamp(1.25rem, 5.5vw, 2.4rem);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+  /* GEEN outline standaard → rustiger op small/medium */
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+  color: #eef1f5;
+  font-weight: 600;
+}
+
+p {
+  margin: 10px 0;
+  color: var(--muted-text);
+}
+
+/* subtiele accent-underline voor h2 */
+.content h2 {
+  position: relative;
+}
+.content h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 2px;
+  margin: 8px auto 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-color),
+    transparent
+  );
+  opacity: 0.6;
+}
+
+/* =========================
+   Tablet (>=768px)
+   ========================= */
+@media (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 24px;
+  }
+
+  header {
+    padding: 80px 24px;
+  }
+
+  .content {
+    max-width: none;
+    width: 100%;
+    text-align: left;
+    padding: 28px 22px;
+  }
+
+  h1 {
+    letter-spacing: 1.25px;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* =========================
+   Desktop (>=1024px) — TERUG NAAR JOUW ORIGINELE LOOK
+   ========================= */
+@media (min-width: 1024px) {
+  header {
+    padding: 100px 28px;
+  }
+
+  .content {
+    padding: 40px 28px;
+
+    /* glassy card zodat de section-foto zichtbaar is */
+    background: rgba(255, 255, 255, 0.05);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  /* Foto in elke section zoals jij ‘m had */
+  section:nth-child(odd),
+  section:nth-child(even) {
+    background-image: url("EDM picture.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    border-radius: 14px;
+  }
+
+  /* Outline alleen op desktop waar de foto onder zit */
+  section.content h2 {
+    -webkit-text-stroke: 1px #000;
+    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+      -1px 1px 0 #000;
+  }
+
+  /* Subtiele dark glow voor leesbaarheid van kleine tekst boven foto */
+  section.content p,
+  section.content h3 {
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.9), 0 0 3px rgba(0, 0, 0, 0.7);
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+  p {
+    margin: 15px 0;
+    font-size: 1rem;
+  }
+}
+
+/* =========================
+   Small (<=767px)
+   ========================= */
+@media (max-width: 767px) {
+  header {
+    padding: 44px 16px;
+  }
+  h1 {
+    letter-spacing: 0.75px;
+  }
+  .content {
+    padding: 22px 16px;
+  }
+}
+
+/* --- Micro polish (optional, non-visual breaking) --- */
+
+/* 1) Reduced-motion: voorkom hover-animaties als gebruiker dat aangeeft */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  .content:hover {
+    transform: none;
+  }
+}
+
+/* 2) System font stack voor betere rendering op elk platform */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* 3) Mooie tekstselectie in je accentkleur */
+::selection {
+  background: rgba(60, 153, 220, 0.35);
+  color: #fff;
+}
