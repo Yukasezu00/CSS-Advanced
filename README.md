@@ -1,10 +1,10 @@
-# Project: CSS Advanced
+# 🎨 Project: CSS Advanced
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)  
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)  
-![Flexbox](https://img.shields.io/badge/Flexbox-2965f1?style=for-the-badge&logo=css3&logoColor=white)  
-![CSS Grid](https://img.shields.io/badge/CSS%20Grid-FF6F61?style=for-the-badge&logo=css3&logoColor=white)  
-![Responsive Design](https://img.shields.io/badge/Responsive%20Design-4CAF50?style=for-the-badge&logo=googlechrome&logoColor=white)  
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Flexbox](https://img.shields.io/badge/Flexbox-FF9800?style=for-the-badge&logo=css3&logoColor=white)
+![CSS Grid](https://img.shields.io/badge/CSS%20Grid-9C27B0?style=for-the-badge&logo=css3&logoColor=white)
+![Responsive Design](https://img.shields.io/badge/Responsive%20Design-4CAF50?style=for-the-badge&logo=googlechrome&logoColor=white)
 ![Winc Academy](https://img.shields.io/badge/Winc%20Academy-0066FF?style=for-the-badge&logo=google-classroom&logoColor=white)
 
 ---
